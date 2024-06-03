@@ -1,0 +1,9 @@
+Your text
+
+with some\r
+
+different types\r\n
+
+of line breaks\v
+
+and punctuation!
