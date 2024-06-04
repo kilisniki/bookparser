@@ -2,3 +2,5 @@
 myenv
 node_modules
 .idea
+my_texts.txt
+normalized_word_counts.xlsx
