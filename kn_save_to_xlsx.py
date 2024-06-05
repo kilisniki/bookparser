@@ -27,7 +27,7 @@ def save_to_excel(word_map, filename):
             data['count'],
             ', '.join(data['forms']),
             ' | '.join(data['chosen_sentences']),
-            ''
+            data['status']
         ])
 
     # Adjust the data validation range to include all rows in the Status column

@@ -29,7 +29,8 @@ def default_dict_factory():
         'forms': set(),
         'sentences': set(),
         'sentence_forms': defaultdict(set),
-        'chosen_sentences': []
+        'chosen_sentences': [],
+        'status': "Unknown"
     }
 
 def remove_line_breaks(text):
@@ -162,8 +163,15 @@ def update_word_map_with_sentences(word_map):
             word_map[word]['chosen_sentences'] = chosen_sentences
     return word_map
 
+def enrich_word_map(word_map, vocabulary):
+    for word in word_map:
+        if word in vocabulary and vocabulary[word]['status'] == 'Known':
+            word_map[word]['status'] = 'Known'
+    return word_map
+
 # Function to execute the main script
-def process_text_file(input_filename):
+# This function should
+def process_text_file(input_filename, vocabulary):
     # Load the book text
     print("Loading book text...")
     with open(input_filename, 'r', encoding='utf-8') as f:
@@ -190,6 +198,11 @@ def process_text_file(input_filename):
     print("Finding sentences for each word...")
     final_word_map = find_sentences_for_words(normalized_map, text)
     print("Sentences found for each word.")
+
+    if (vocabulary):
+        print("Enrich by user's vocabulary")
+        enrich_word_map(final_word_map, vocabulary)
+        print("Words enriched by vocabulary")
 
     print("Updating word map with chosen sentences...")
     return update_word_map_with_sentences(final_word_map)
