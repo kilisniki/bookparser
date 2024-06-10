@@ -30,7 +30,7 @@ def default_dict_factory():
         'sentences': set(),
         'sentence_forms': defaultdict(set),
         'chosen_sentences': [],
-        'status': "Unknown"
+        'status': "New"
     }
 
 def remove_line_breaks(text):
@@ -165,8 +165,8 @@ def update_word_map_with_sentences(word_map):
 
 def enrich_word_map(word_map, vocabulary):
     for word in word_map:
-        if word in vocabulary and vocabulary[word]['status'] == 'Known':
-            word_map[word]['status'] = 'Known'
+        if word in vocabulary and vocabulary[word]['status']:
+            word_map[word]['status'] = vocabulary[word]['status']
     return word_map
 
 # Function to execute the main script

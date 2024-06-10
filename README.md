@@ -10,7 +10,7 @@
 - python -m venv myenv  
 - source myenv/bin/activate 
 - pip install -r requirements.txt
-- python kn_main.py thewitcher_1.txt normalized_word_counts.xlsx
+- python kn_main.py LordoftheFlies.txt my_vocabulary.xlsx
 
 
 # TODO что хочется

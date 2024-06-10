@@ -2,7 +2,8 @@
 myenv
 node_modules
 .idea
-my_texts.txt
-normalized_word_counts.xlsx
-my_vocabulary.xlsx
-book_vocabulary.xlsx
+source/my_texts.txt
+source/normalized_word_counts.xlsx
+source/my_vocabulary.xlsx
+source/book_vocabulary.xlsx
+source/*

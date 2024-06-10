@@ -10,7 +10,7 @@ def save_to_excel(word_map, filename):
     # Create a data validation object
     dv = DataValidation(
         type="list",
-        formula1='"Known,Unknown"',
+        formula1='"Known,Unknown,New"',
         allow_blank=True
     )
     dv.error = 'Invalid entry. Please select from the list.'
